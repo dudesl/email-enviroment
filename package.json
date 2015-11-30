@@ -1,0 +1,22 @@
+{
+  "name": "uimail-layout-marketing",
+  "version": "0.0.1",
+  "description": "Un layout para mails de marketing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-inline-css": "^3.0.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "mailgun-js": "^0.7.7",
+    "run-sequence": "^1.1.5",
+    "ui-swift": "^1.1.0"
+  }
+}

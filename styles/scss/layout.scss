@@ -1,0 +1,444 @@
+
+// Estilo genéricos para tags
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+
+table, tr, td, span, a { -webkit-text-size-adjust:none; margin: 0; padding: 0; border: none;}
+a,
+a:hover,
+a:link,
+a:active{
+  text-decoration: none;
+  color:inherit;
+}
+
+
+[class="stacked"]{
+  min-width: 220px;
+  td {
+    width: 100%;
+    text-align:center;
+  }
+}
+
+li { list-style: none}
+// Layout
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+
+.header {
+  min-width: 430px;
+  overflow: hidden;
+  text-aling:right;
+  margin-bottom: 26px;
+  &__hashtag{
+
+    text-align: right;
+  }
+  &__social{
+    color: #999;
+    font-size: 14px;
+    text-align: right;
+
+    a {
+      min-width: 35px;
+      min-height: 35px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  &__links{
+    color: #aaa;
+    font-size: 12px;
+    text-align: right;
+  a {
+
+    }
+  }
+}
+
+.footer {
+    $footer-font-size: 12px;
+    $footer-color: #aaa;
+
+    p {
+      color: $footer-color;
+      font-size: $footer-font-size;
+    }
+
+    h3 {
+      color: #666;
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+    &__banner {
+      color: #999;
+      font-size: 16px;
+      font-weight: 200;
+      padding-top: 0;
+      margin-top: 0;
+
+      &.row{
+        tr:not(:last-child) td{
+            padding: 0px
+        }
+      }
+      [class="stacked"] {
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        min-width: 100px;
+        td {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+      &-logos{
+          margin: 0px auto 15px;
+          h3 {
+            color: #999;
+            font-size: 20px;
+            font-weight: 200;
+          }
+          img {
+              margin: 0 5px;
+              max-width: 100px;
+          }
+      }
+    }
+
+    &__actions {
+       font-size: $footer-font-size;
+       color: $footer-color;
+       margin: 15px auto;
+
+        a {
+          color: $footer-color;
+        text-decoration:none;
+        }
+    }
+
+    &__tyc p {
+        margin:0
+    }
+}
+
+// Elements
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+
+// Contenedor genérico
+// ----------------------------------------------
+
+.container {
+  border: none;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0;
+  width: 100%;
+  min-width: 360px;
+  overflow: hidden;
+}
+
+
+// Fila separación
+// ----------------------------------------------
+.separator {
+  background-color:#ddd;
+  font-size:1px;
+  margin: 10px auto;
+}
+
+// Fila
+// ----------------------------------------------
+.row {
+    width: 100%;
+    max-width: 600px;
+    padding-top:17px;
+    text-align: center;
+    tr:not(:last-child) td{
+        padding: 10px
+    }
+
+    td {
+      box-sizing: border-box;
+
+      span {
+        display: block;
+      }
+    }
+}
+
+.row-white {
+    background-color: #FFFFFF;
+}
+
+.row-grey {
+    background-color: #F3F3F3;
+}
+
+// Articulo
+// ----------------------------------------------
+// ----------------------------------------------
+
+.article {
+
+    h2 {
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 5px;
+        margin-top: 0;
+        color: #333;
+    }
+
+    &__img {
+      text-align: center;
+    }
+    &__desc {
+      td {
+        width: 50%;
+        text-align: left;
+      }
+
+      .button {
+        margin-top: 24px;
+      }
+    }
+}
+
+// Galeria
+// ----------------------------------------------
+// ----------------------------------------------
+
+.gallery {
+    &-item {
+        background-color: #ffffff;
+        margin: 0px;
+        padding: 0px;
+        display: inline-block;
+        position: relative;
+
+        > span {
+            display: block;
+            text-align: left;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+      .price {
+        border: none;
+        color: #900;
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0;
+        text-align: left;
+        position: absolute;
+        bottom: 0px;
+        background-color: white;
+        width: 150px;
+        height: 30px;
+        line-height: 2em;
+        padding-left: 10px;
+        margin: 0;
+      }
+    }
+}
+.gallery-small {
+    .gallery-item {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+// Categorias (Listas)
+// ----------------------------------------------
+// ----------------------------------------------
+
+.category-list {
+    span { display: block; margin-bottom: 10px}
+    vertical-align: top;
+
+    td {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+      min-width: 100px;
+      margin: 0;
+      vertical-align: top;
+      padding: 0;
+
+      li {
+        font-size: 12px;
+
+        a,
+        a:hover,
+        a:link,
+        a:active{
+          color: #999;
+        }
+      }
+    }
+}
+
+// Precios
+// ----------------------------------------------
+// ----------------------------------------------
+.bpp-shield {
+  text-align: left;
+  margin-bottom: 10px;
+
+  h4 {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+
+  p {
+    font-size: 13px;
+    color:#333;
+  }
+
+}
+
+// Precios
+// ----------------------------------------------
+// ----------------------------------------------
+
+.price {
+    color: #900;
+    font-weight: bold;
+    font-size: 24px;
+
+    sup {
+      font-size: 14px;
+      line-height: 2em;
+    }
+
+    > p {
+        font-size: 12px;
+        font-weight: normal;
+        margin: 0;
+    }
+}
+.price-crossed{
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.1em;
+    margin-top: 15px;
+    color: #999;
+    text-decoration: line-through;
+    display: block;
+
+    sup {
+      font-size: 10px;
+      line-height: 1em;
+    }
+}
+
+.discount-label {
+  background-image: url('http://static.mlstatic.com/org-img/mkt/retargeting/mail/3/arrow-left.gif?v=1');
+  background-repeat: no-repeat;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 1.4em;
+  margin: 0 10px 5px 10px;
+  padding: 0 10px;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.discount-label .arrow-left {
+  display: inline-block;
+  height: 1px;
+  left: -13px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+
+// Botones
+// ----------------------------------------------
+// ----------------------------------------------
+
+.button {
+  background-color: #424684;
+  border: solid 1px;
+  border-color: #424684;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  margin: 24px 0;
+  padding: 6px 30px;
+  text-align: center;
+  text-decoration: none;
+
+}
+a.button,
+a.button:hover,
+a.button:link,
+a.button:active{
+      text-decoration: none;
+}
+
+// HELPERS
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+.wrapper {
+  width: 100%;
+  &-center {
+    text-align: center;
+  }
+
+  &-top {
+    vertical-align: top;
+  }
+}
+
+// Media Query
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: 480px) and (max-device-width: 480px){
+    td[class="logo"]{
+        text-align: center !important;
+    }
+
+    [class="stacked"]{
+      display: block;
+      width: 100% !important;
+    }
+
+    .container{
+      min-width: 320px;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .row {
+      td {
+        width: 100% !important;
+        display: block;
+        text-align: center;
+      }
+    }
+}
