@@ -11,10 +11,8 @@ var body = '';
 
 var data = {
   from: 'Mailgun Postmaster <postmaster@sandboxd2cba16debb04c3a9d37570b82f0c884.mailgun.org>',
-  subject: '[TEST] MELI Retargueting 0.0.9',
-  // subject: '[TEST] MELI Retargueting',
-  to: 'santiago.barchetta@mercadolibre.com,lucia.guedes@mercadolibre.com'
-  // to: 'sbarchetta-9drp@litmustest.com'
+  subject: '[TEST] ',
+  to: ''
 }
 
 http.get(url, function(res) {
