@@ -8,26 +8,38 @@ var swift = require('ui-swift');
 var runSequence = require('run-sequence');
 var sourcemaps  = require('gulp-sourcemaps');
 
+
+var src = {
+  'base' : 'src/',
+  'styles' : 'src/styles',
+  'images' : 'src/images'
+}
+
+var build = {
+  'base' : 'build/',
+  'styles' : 'build/styles',
+  'images' : 'build/images'
+}
+
 gulp.task('serve', ['build'], function() {
 
     browserSync.init({
-        server: '.'
+        server: build.base + '/index.html'
     });
 
-    gulp.watch('styles/scss/*.scss', ['scssBuild']);
-    gulp.watch('*.html', ['build']);
+    gulp.watch(src.styles + '/**/*.scss', ['scssBuild']).on('change', reload);;
+    gulp.watch('*.html', ['build']).on('change', reload);;
 });
-
 
 // Compile scss into CSS & auto-inject into browsers
 gulp.task('scssBuild', function() {
-    return gulp.src('styles/scss/*.scss')
+    return gulp.src(src.styles + '/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
           onError: console.error.bind(console, 'Sass error:')
         }))
         .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('styles'))
+        .pipe(gulp.dest(build.styles))
         .pipe(browserSync.stream());
 });
 
@@ -39,26 +51,13 @@ gulp.task('inlineDist', function() {
           applyStyleTags: true,
           applyLinkTags: true
         }))
-        .pipe(gulp.dest('./build/'));
-});
-
-gulp.task('uploadStatics', function () {
-    swift({
-        'department': 'ui',
-        'user': 'app_ui-mails_boilerplate',
-        'password': 'L0jkAHejnD',
-        'friendlyUrl': 'email',
-        'container': 'statics',
-        'folder': 'img',
-        'version': '0.0.0',
-        'verbose': true
-    });
+        .pipe(gulp.dest(build.base));
 });
 
 // Optimiza y copia las imagenes a ./web-app/images
 gulp.task('imageBuild', function() {
-    return gulp.src('img/**/**.*')
-        .pipe(gulp.dest('build/img'))
+    return gulp.src(src.images + '/**/**.*')
+        .pipe(gulp.dest(build.images))
 });
 
 gulp.task('build', function () {
