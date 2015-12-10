@@ -11,8 +11,8 @@ var body = '';
 
 var data = {
   from: 'Mailgun Postmaster <postmaster@sandboxd2cba16debb04c3a9d37570b82f0c884.mailgun.org>',
-  subject: '[TEST] ',
-  to: ''
+  subject: '[TEST] Email Marketing',
+  to: 'sbarchetta@litmustest.com'
 }
 
 http.get(url, function(res) {
