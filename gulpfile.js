@@ -44,7 +44,7 @@ gulp.task('scssBuild', function() {
 
 // Inline CSS
 gulp.task('inlineDist', function() {
-    return gulp.src('*.html')
+    return gulp.src('src/*.html')
         .pipe(inlineCss({
           preserveMediaQueries: true,
           applyStyleTags: true,

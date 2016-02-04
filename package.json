@@ -1,13 +1,13 @@
 {
-  "name": "uimail-layout-marketing",
-  "version": "0.0.1",
-  "description": "Un layout para mails de marketing",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "name": "<%= mailName %>",
+  "version": "<%= mailVersion %>",
+  "description": "<%= mailDescription %>",
+  "author": "<%= authorName %>",
   "license": "ISC",
+  "repository" : {
+    "type" : "git",
+    "url" : "<%= repositoryURL %>"
+  },
   "dependencies": {
     "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
