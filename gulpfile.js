@@ -7,17 +7,23 @@ var sass = require('gulp-sass');
 var runSequence = require('run-sequence');
 var sourcemaps  = require('gulp-sourcemaps');
 
-
 var src = {
-  'base' : 'src/',
+  'base'   : 'src',
   'styles' : 'src/styles',
-  'images' : 'src/images'
+  'images' : 'src/images',
+  'html'   : 'src/html',
+  'content': 'src/content'
 }
 
 var build = {
-  'base' : 'build',
-  'styles' : 'build/styles',
-  'images' : 'build/images'
+    'base'   : 'build',
+    'styles' : 'build/styles',
+    'images' : 'build/images',
+    'content': 'build/content'
+}
+
+var dist = {
+    'base' : 'dist'
 }
 
 gulp.task('serve', ['build'], function() {
@@ -44,13 +50,13 @@ gulp.task('scssBuild', function() {
 
 // Inline CSS
 gulp.task('inlineDist', function() {
-    return gulp.src('src/*.html')
+    return gulp.src(build.base + '/*.html')
         .pipe(inlineCss({
           preserveMediaQueries: true,
           applyStyleTags: true,
           applyLinkTags: true
         }))
-        .pipe(gulp.dest(build.base));
+        .pipe(gulp.dest(dist.base));
 });
 
 // Optimiza y copia las imagenes a ./web-app/images
@@ -61,6 +67,12 @@ gulp.task('imageBuild', function() {
 
 gulp.task('build', function () {
   runSequence(
-    'scssBuild', 'imageBuild','inlineDist'
+    'scssBuild', 'imageBuild'
+  )
+})
+
+gulp.task('dist', function () {
+  runSequence(
+    'inlineDist'
   )
 })
