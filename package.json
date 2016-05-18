@@ -1,17 +1,20 @@
 {
-  "name": "<%= mailName %>",
-  "version": "<%= mailVersion %>",
-  "description": "<%= mailDescription %>",
-  "author": "<%= authorName %>",
+  "name": "email-enviroment",
+  "version": "0.2.0",
+  "description": "An enviroment to compose an email",
+  "author": "Santiago Barchetta <santiago.barchetta@mercadolibre.com",
   "license": "ISC",
-  "repository" : {
-    "type" : "git",
-    "url" : "<%= repositoryURL %>"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dudesl/email-enviroment"
   },
   "dependencies": {
     "browser-sync": "^2.10.0",
+    "del": "^2.2.0",
     "gulp": "^3.9.0",
+    "gulp-compile-handlebars": "^0.6.1 ",
     "gulp-inline-css": "^3.0.0",
+    "gulp-load-plugins": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
