@@ -4,7 +4,6 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var inlineCss = require('gulp-inline-css');
 var sass = require('gulp-sass');
-var swift = require('ui-swift');
 var runSequence = require('run-sequence');
 var sourcemaps  = require('gulp-sourcemaps');
 
@@ -16,7 +15,7 @@ var src = {
 }
 
 var build = {
-  'base' : 'build/',
+  'base' : 'build',
   'styles' : 'build/styles',
   'images' : 'build/images'
 }
@@ -24,10 +23,10 @@ var build = {
 gulp.task('serve', ['build'], function() {
 
     browserSync.init({
-        server: build.base + '/index.html'
+        server: build.base
     });
 
-    gulp.watch(src.styles + '/**/*.scss', ['scssBuild']).on('change', reload);;
+    gulp.watch(src.styles + '/**/*.scss', ['build']).on('change', reload);;
     gulp.watch('*.html', ['build']).on('change', reload);;
 });
 
@@ -45,7 +44,7 @@ gulp.task('scssBuild', function() {
 
 // Inline CSS
 gulp.task('inlineDist', function() {
-    return gulp.src('*.html')
+    return gulp.src('src/*.html')
         .pipe(inlineCss({
           preserveMediaQueries: true,
           applyStyleTags: true,
