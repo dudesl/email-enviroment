@@ -19,6 +19,6 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "mailgun-js": "^0.7.7",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.2.2"
   }
 }
