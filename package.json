@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.10.0",
-    "del": "^2.2.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.0",
     "gulp-compile-handlebars": "^0.6.1 ",
     "gulp-inline-css": "^3.0.0",
