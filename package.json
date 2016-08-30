@@ -9,7 +9,7 @@
     "url": "https://github.com/dudesl/email-enviroment"
   },
   "dependencies": {
-    "browser-sync": "^2.10.0",
+    "browser-sync": "^2.14.3",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-compile-handlebars": "^0.6.1 ",
